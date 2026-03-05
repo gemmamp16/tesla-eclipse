@@ -120,7 +120,7 @@ export default function SplashScreen({ onInstall }: { onInstall: () => void }) {
           Instalar ahora
         </button>
         <p className="text-[11px] text-[#505055] text-center">
-          Feliz cumpleaños · Se recomienda conexión Wi-Fi
+          Feliz cumpleaños amor
         </p>
       </motion.div>
     </motion.div>

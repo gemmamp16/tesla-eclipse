@@ -33,11 +33,11 @@ export default function UpdateComplete({ onViewCards }: { onViewCards?: () => vo
         <p className="text-[11px] text-[#707075] uppercase tracking-[0.2em] mb-3">
           Actualización instalada · v2026.8.12
         </p>
-        <h1 className="text-[32px] font-bold mb-2">Feliz Cumpleaños ❤️</h1>
+        <h1 className="text-[32px] font-bold mb-2">Feliz Cumpleaños amor ❤️</h1>
         <p className="text-[15px] text-[#a0a0a5] leading-relaxed max-w-xs mx-auto">
-          Este agosto vas a vivir algo que no se ha visto en España en más de un siglo.
-          Juntos, en nuestro Tesla, bajo el eclipse total.
-          Nuestro primer camping. Nuestra primera aventura.
+          Este agosto vamos a vivir algo que no se ha visto en España en más de un siglo.
+          Juntos, en el Teslita, bajo el eclipse total.
+          Nuestro primer camping. Nuestra aventura.
         </p>
         <p className="text-[14px] text-[#707075] mt-4 italic">Te quiero</p>
       </motion.div>
