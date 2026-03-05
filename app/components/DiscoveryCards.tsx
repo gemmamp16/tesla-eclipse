@@ -1,9 +1,16 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import EclipseDiagram from "./EclipseDiagram";
+
+const RouteMap = dynamic(() => import("./RouteMap"), { ssr: false, loading: () => (
+  <div className="rounded-2xl bg-[#0d0d0d] border border-white/5 flex items-center justify-center" style={{ height: 210 }}>
+    <p className="text-[13px] text-[#505055]">Cargando mapa…</p>
+  </div>
+)});
 
 interface DiscoveryCardsProps {
   onComplete: () => void;
@@ -54,18 +61,8 @@ const MapVisual = () => (
 // ── Card 3: Ruta Supercharger ────────────────────────────────────────────────
 const RouteVisual = () => (
   <div className="space-y-3">
-    {/* Google Maps con Almoradí → SC Valencia → SC Teruel → Camping Javalambre */}
-    <div className="rounded-2xl overflow-hidden border border-white/5" style={{ height: 210 }}>
-      <iframe
-        width="100%"
-        height="210"
-        style={{ border: 0, display: "block" }}
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Ruta con Superchargers"
-        src="https://maps.google.com/maps?f=d&hl=es&saddr=Almorad%C3%AD,+Alicante,+Espa%C3%B1a&daddr=Tesla+Supercharger+Torrent,+Valencia+to:Camping+Javalambre,+Manzanera,+Teruel&output=embed"
-      />
-    </div>
+    {/* Mapa Leaflet oscuro con marcadores y ruta real */}
+    <RouteMap />
     {/* Paradas Supercharger ruta Almoradí → Manzanera */}
     <div className="bg-[#0d0d0d] rounded-2xl border border-white/5 overflow-hidden">
       <div className="px-4 py-3 border-b border-white/5">

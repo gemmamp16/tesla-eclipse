@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import Countdown from "./Countdown";
 
-export default function UpdateComplete() {
+export default function UpdateComplete({ onViewCards }: { onViewCards?: () => void }) {
   useEffect(() => {
     const duration = 3500;
     const end = Date.now() + duration;
@@ -131,6 +131,20 @@ export default function UpdateComplete() {
         </p>
         <p className="text-[14px] text-tesla-muted mt-5 italic">Te quiero</p>
       </motion.div>
+
+      {/* Botón para ver las cards de nuevo */}
+      {onViewCards && (
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.8 }}
+          onClick={onViewCards}
+          className="mt-10 px-8 py-3 rounded-xl text-[14px] font-semibold cursor-pointer transition-opacity active:opacity-70"
+          style={{ background: "#2a2a2a", color: "#a0a0a5" }}
+        >
+          Ver los 5 regalos
+        </motion.button>
+      )}
     </motion.div>
   );
 }
