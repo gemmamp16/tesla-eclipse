@@ -206,7 +206,7 @@ const cards = [
     tag: "EXPERIENCIA ASTRONÓMICA",
     title: "Eclipse Solar Total",
     subtitle: "12 de agosto de 2026 · 20:30h · ~90 segundos",
-    body: "El 12 de agosto de 2026 la Luna tapará el Sol por completo sobre Teruel durante 90 segundos. El eclipse parcial empieza a las 19:30h y la totalidad llega a las 20:30h — con el Sol todavía alto antes de su puesta a las 21:00h. La corona solar brillará a simple vista, el cielo se oscurecerá de golpe y saldrán estrellas en pleno agosto. Y hay un bonus: coincide con el máximo de las Perseidas, la lluvia de estrellas más famosa del año. Doble espectáculo en una sola noche.",
+    body: (<>El <strong className="text-white">12 de agosto de 2026</strong> la Luna tapará el Sol por completo sobre Teruel durante <strong className="text-white">90 segundos</strong>. El eclipse parcial empieza a las 19:30h y <strong className="text-white">la totalidad llega a las 20:30h</strong> — con el Sol todavía alto antes de su puesta a las 21:00h. La <strong className="text-white">corona solar</strong> brillará a simple vista, el cielo se oscurecerá de golpe y saldrán estrellas en pleno agosto. Y hay un bonus: coincide con el <strong className="text-white">máximo de las Perseidas</strong>, la lluvia de estrellas más famosa del año. Doble espectáculo en una sola noche.</>),
     link: { label: "Más info · Turismo de Aragón", url: "https://www.turismodearagon.com/eclipse-solar-2026/" },
     visual: <EclipseVisual />,
   },
@@ -215,7 +215,7 @@ const cards = [
     tag: "NUEVO DESTINO",
     title: "Camping Javalambre",
     subtitle: "8 – 14 de agosto · Manzanera, Teruel",
-    body: "He reservado el camping del 8 al 14 de agosto — llegamos con días por delante para disfrutar la sierra antes del gran momento. El 12, el eclipse parcial empieza a las 19:30h y la totalidad llega a las 20:30h. Esa misma noche coincide con el máximo de las Perseidas. El Camping Javalambre, a los pies del Pico del Buitre (1.957 m), tiene certificación Starlight — uno de los cielos más oscuros de Europa. Sitio, fechas, eclipse y lluvia de estrellas: todo en una semana.",
+    body: (<>He reservado el camping del <strong className="text-white">8 al 14 de agosto</strong> — llegamos con días por delante para disfrutar la sierra antes del gran momento. El 12, el eclipse parcial empieza a las 19:30h y <strong className="text-white">la totalidad llega a las 20:30h</strong>. Esa misma noche coincide con el máximo de las Perseidas. El Camping Javalambre, a los pies del <strong className="text-white">Pico del Buitre (1.957 m)</strong>, tiene <strong className="text-white">certificación Starlight</strong> — uno de los cielos más oscuros de Europa. Sitio, fechas, eclipse y lluvia de estrellas: todo en una semana.</>),
     visual: <MapVisual />,
   },
   {
@@ -223,7 +223,7 @@ const cards = [
     tag: "RUTA CALCULADA",
     title: "Paradas Supercharger",
     subtitle: "Almoradí → Manzanera · 318 km · ~3h 30 min",
-    body: "La ruta desde casa hasta el camping son 318 km y unas 3 horas y media. Solo necesitamos una parada de carga: el Supercharger de Torrent, a mitad de camino. Desde ahí el Tesla llega al camping sin problema. La ruta está calculada — solo tienes que subir.",
+    body: (<>La ruta desde casa hasta el camping son <strong className="text-white">318 km</strong> y unas <strong className="text-white">3 horas y media</strong>. Solo necesitamos una parada de carga: el <strong className="text-white">Supercharger de Torrent</strong>, a mitad de camino. Desde ahí el Tesla llega al camping sin problema. La ruta está calculada — solo tienes que subir.</>),
     visual: <RouteVisual />,
   },
   {
@@ -231,7 +231,7 @@ const cards = [
     tag: "HARDWARE INCLUIDO",
     title: "Hardware incluido",
     subtitle: "Objeto físico · Ya está en tus manos",
-    body: "Durante un eclipse solar, mirar directamente al Sol sin protección adecuada puede causar daños permanentes en la retina — incluso en los segundos antes y después de la totalidad. Por eso he incluido este componente esencial. Solo durante los ~2 minutos de totalidad completa podrás quitártelos y mirar la corona directamente. Ábrelo ahora.",
+    body: (<>Durante un eclipse solar, mirar directamente al Sol sin protección puede causar <strong className="text-white">daños permanentes en la retina</strong> — incluso en los segundos antes y después de la totalidad. Por eso he incluido este componente esencial. Solo durante los <strong className="text-white">~90 segundos de totalidad completa</strong> podrás quitártelos y mirar la corona directamente. <strong className="text-white">Ábrelo ahora.</strong></>),
     visual: <GlassesVisual />,
   },
   {
@@ -239,7 +239,7 @@ const cards = [
     tag: "KIT DE AVENTURA",
     title: "Tarjeta Decathlon",
     subtitle: "100€ · Para equiparte para la aventura",
-    body: "Para nuestra primera aventura de camping necesitaremos equipo. Con esta tarjeta vamos juntos a Decathlon a elegir lo que haga falta: saco de dormir, esterilla, ropa de montaña, linterna... Lo que tú quieras. Es tu regalo para que esta aventura sea lo más cómoda y divertida posible.",
+    body: (<>Para nuestra primera aventura de camping necesitaremos equipo. Con esta tarjeta <strong className="text-white">vamos juntos a Decathlon</strong> a elegir lo que haga falta: <strong className="text-white">saco de dormir, esterilla, ropa de montaña</strong>, linterna... Lo que tú quieras. Es tu regalo para que esta aventura sea lo más cómoda y divertida posible.</>),
     visual: <DecathlonVisual />,
   },
 ];
