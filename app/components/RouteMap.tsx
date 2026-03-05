@@ -10,13 +10,8 @@ const STOPS = [
     type: "start",
   },
   {
-    pos: [39.4754, -0.3618] as [number, number],
-    label: "SC Valencia",
-    type: "charger",
-  },
-  {
-    pos: [40.3456, -1.1065] as [number, number],
-    label: "SC Teruel",
+    pos: [39.4333, -0.4614] as [number, number],
+    label: "SC Torrent",
     type: "charger",
   },
   {

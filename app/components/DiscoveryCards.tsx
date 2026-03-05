@@ -63,19 +63,18 @@ const RouteVisual = () => (
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title="Ruta con Superchargers"
-        src="https://maps.google.com/maps?f=d&hl=es&saddr=Almorad%C3%AD,+Alicante,+Espa%C3%B1a&daddr=Tesla+Supercharger+Valencia+to:Tesla+Supercharger+Teruel+to:Camping+Javalambre,+Manzanera,+Teruel&output=embed"
+        src="https://maps.google.com/maps?f=d&hl=es&saddr=Almorad%C3%AD,+Alicante,+Espa%C3%B1a&daddr=Tesla+Supercharger+Torrent,+Valencia+to:Camping+Javalambre,+Manzanera,+Teruel&output=embed"
       />
     </div>
     {/* Paradas Supercharger ruta Almoradí → Manzanera */}
     <div className="bg-[#0d0d0d] rounded-2xl border border-white/5 overflow-hidden">
       <div className="px-4 py-3 border-b border-white/5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#a0a0a5]">Paradas Supercharger · ~270 km</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#a0a0a5]">Paradas Supercharger · ~250 km</p>
       </div>
       {[
         { ciudad: "Almoradí", km: "Salida", sc: "Alicante · inicio de ruta", icon: "🏁" },
-        { ciudad: "Valencia", km: "~130 km", sc: "SC Valencia Gran Vía · Recomendado", icon: "⚡", highlight: true },
-        { ciudad: "Teruel", km: "~240 km", sc: "SC Teruel · Av. de Sagunto", icon: "⚡" },
-        { ciudad: "Camping Javalambre", km: "~270 km", sc: "Manzanera, Teruel · Destino", icon: "⛺" },
+        { ciudad: "SC Torrent", km: "~130 km", sc: "Parc Comercial Torrent · Valencia", icon: "⚡", highlight: true },
+        { ciudad: "Camping Javalambre", km: "~250 km", sc: "Manzanera, Teruel · Destino", icon: "⛺" },
       ].map(({ ciudad, km, sc, icon, highlight }) => (
         <div key={ciudad} className={`flex items-center gap-3 px-4 py-3 border-b border-white/5 last:border-0 ${highlight ? "bg-[#F59E0B]/8" : ""}`}>
           <span className="text-base w-6 text-center">{icon}</span>
