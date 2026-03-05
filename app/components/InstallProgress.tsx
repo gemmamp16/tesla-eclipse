@@ -66,8 +66,8 @@ export default function InstallProgress({ onComplete }: { onComplete: () => void
         {/* Progress bar */}
         <div className="w-full h-[3px] bg-tesla-card-light rounded-full overflow-hidden mb-6">
           <motion.div
-            className="h-full bg-tesla-blue rounded-full"
-            style={{ width: `${progress}%` }}
+            className="h-full rounded-full"
+            style={{ width: `${progress}%`, background: "#3EB489" }}
           />
         </div>
 

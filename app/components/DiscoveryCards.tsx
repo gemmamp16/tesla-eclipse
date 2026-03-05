@@ -22,7 +22,7 @@ const EclipseVisual = () => (
       {[
         { zona: "Galicia · Asturias", desc: "Entrada por el Cantábrico" },
         { zona: "Castilla y León · Aragón", desc: "Zona central — máxima duración" },
-        { zona: "Teruel · Javalambre ✦", desc: "Tu destino — ~2 min totalidad", highlight: true },
+        { zona: "Teruel · Javalambre ✦", desc: "Tu destino — 20:08h · eclipse al atardecer", highlight: true },
         { zona: "Valencia · Mediterráneo", desc: "Salida hacia Baleares" },
       ].map(({ zona, desc, highlight }) => (
         <div key={zona} className={`flex items-start gap-2 py-1.5 px-2 rounded-lg ${highlight ? "bg-[#F59E0B]/10" : ""}`}>
@@ -205,8 +205,8 @@ const cards = [
     label: "01 / 05",
     tag: "EXPERIENCIA ASTRONÓMICA",
     title: "Eclipse Solar Total",
-    subtitle: "12 de agosto de 2026 · Javalambre, Teruel",
-    body: "El 12 de agosto de 2026 ocurrirá algo que no se ha visto en España en más de un siglo: un eclipse solar total. La Luna cubrirá el Sol por completo durante casi 2 minutos. El cielo se oscurecerá como si fuera de noche, saldrán estrellas al mediodía y la corona solar — ese halo blanco que rodea al Sol — brillará a simple vista. Es uno de los espectáculos más impresionantes que existe en la naturaleza. Y lo vamos a ver juntos.",
+    subtitle: "12 de agosto de 2026 · Al atardecer · Javalambre",
+    body: "El 12 de agosto de 2026 ocurrirá algo que no se ha visto en España en más de un siglo: un eclipse solar total. Y tiene un detalle único — ocurrirá al atardecer. A las 20:08h (hora local) el Sol, ya bajo en el horizonte, quedará completamente tapado por la Luna durante casi 2 minutos. La corona solar brillará sobre las montañas de Javalambre, el cielo se oscurecerá de golpe y saldrán las estrellas. Ver un eclipse total ya es extraordinario. Verlo al atardecer, sobre la sierra, es irrepetible.",
     visual: <EclipseVisual />,
   },
   {
@@ -214,7 +214,7 @@ const cards = [
     tag: "NUEVO DESTINO",
     title: "Camping Javalambre",
     subtitle: "8 – 14 de agosto · Manzanera, Teruel",
-    body: "He reservado el camping del 8 al 14 de agosto para que tengamos tiempo de sobra de llegar, instalarnos y disfrutar de la sierra antes del gran día. El Camping Javalambre está a los pies del Pico del Buitre (1.957 m), en una de las zonas con menos contaminación lumínica de toda Europa. Tiene certificación Starlight — eso significa que el cielo nocturno allí es excepcional. Los días previos al eclipse los pasaremos rodeados de montaña, estrellas y silencio.",
+    body: "He reservado el camping del 8 al 14 de agosto — llegamos con días por delante para disfrutar la sierra, las estrellas y el silencio antes del gran momento. El 12 a las 20:08h, justo cuando el sol esté a punto de ponerse sobre las montañas, ocurrirá la totalidad. El Camping Javalambre está en una de las zonas con menos contaminación lumínica de Europa, con certificación Starlight. Sitio, fechas y cielo: perfectos.",
     visual: <MapVisual />,
   },
   {
