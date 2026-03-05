@@ -5,7 +5,13 @@ import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import Countdown from "./Countdown";
 
-export default function UpdateComplete({ onViewCards }: { onViewCards?: () => void }) {
+export default function UpdateComplete({
+  onViewCards,
+  onReset,
+}: {
+  onViewCards?: () => void;
+  onReset?: () => void;
+}) {
   useEffect(() => {
     const duration = 3500;
     const end = Date.now() + duration;
@@ -112,6 +118,19 @@ export default function UpdateComplete({ onViewCards }: { onViewCards?: () => vo
           style={{ background: "#2a2a2a", color: "#a0a0a5" }}
         >
           Ver los 5 regalos
+        </motion.button>
+      )}
+
+      {/* Reiniciar */}
+      {onReset && (
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.0 }}
+          onClick={onReset}
+          className="mt-6 text-[12px] text-[#444] cursor-pointer transition-colors hover:text-[#666] active:opacity-60"
+        >
+          ↺ Volver al inicio
         </motion.button>
       )}
     </motion.div>

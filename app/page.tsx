@@ -51,6 +51,13 @@ export default function Home() {
     setScreen("features");
   }, []);
 
+  const handleReset = useCallback(() => {
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_VER);
+    setUnlockedCount(0);
+    setScreen("splash");
+  }, []);
+
   const progress =
     screen === "splash" ? 0
     : screen === "installing" ? 15
@@ -78,7 +85,7 @@ export default function Home() {
           />
         )}
         {screen === "complete" && (
-          <UpdateComplete key="complete" onViewCards={handleViewCards} />
+          <UpdateComplete key="complete" onViewCards={handleViewCards} onReset={handleReset} />
         )}
       </AnimatePresence>
     </div>
