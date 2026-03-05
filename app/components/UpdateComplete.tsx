@@ -99,7 +99,7 @@ export default function UpdateComplete({ onViewCards }: { onViewCards?: () => vo
         {[
           { icon: "🌑", label: "Viaje al eclipse solar total", sub: "Javalambre, Teruel · 12 ago 2026" },
           { icon: "🕶️", label: "Gafas de eclipse certificadas", sub: "ISO 12312-2 · Listas para usar" },
-          { icon: "🎁", label: "Tarjeta regalo Decathlon", sub: "100€ para equiparos juntos" },
+          { icon: "🎁", label: "Tarjeta regalo Decathlon", sub: "100€ para equiparte para la aventura" },
         ].map(({ icon, label, sub }) => (
           <div key={label} className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-xl bg-tesla-card-light flex items-center justify-center text-xl shrink-0">
@@ -125,7 +125,7 @@ export default function UpdateComplete({ onViewCards }: { onViewCards?: () => vo
           Feliz Cumpleaños ❤️
         </p>
         <p className="text-[14px] text-tesla-secondary leading-relaxed">
-          Este agosto viviremos algo que no se ha visto en España en más de un
+          Este agosto vas a vivir algo que no se ha visto en España en más de un
           siglo. Juntos, en nuestro Tesla, bajo el eclipse total.
           Nuestro primer camping. Nuestra primera aventura.
         </p>

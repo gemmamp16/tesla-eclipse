@@ -3,73 +3,90 @@
 import { motion } from "framer-motion";
 
 export default function EclipseDiagram() {
-  // Moon travels: right (170) → totality (100) → left (30)
-  // Corona rays appear only near totality
-  const coronaRays = Array.from({ length: 12 }, (_, i) => {
-    const angle = (i / 12) * 360;
+  // 12 corona rays around the sun center
+  const rays = Array.from({ length: 16 }, (_, i) => {
+    const angle = (i / 16) * 360;
     const rad = (angle * Math.PI) / 180;
-    const x1 = 100 + Math.cos(rad) * 43;
-    const y1 = 100 + Math.sin(rad) * 43;
-    const x2 = 100 + Math.cos(rad) * (54 + (i % 3) * 7);
-    const y2 = 100 + Math.sin(rad) * (54 + (i % 3) * 7);
-    return { x1, y1, x2, y2 };
+    const inner = 42;
+    const outer = inner + 14 + (i % 3) * 10;
+    return {
+      x1: 100 + Math.cos(rad) * inner,
+      y1: 100 + Math.sin(rad) * inner,
+      x2: 100 + Math.cos(rad) * outer,
+      y2: 100 + Math.sin(rad) * outer,
+    };
   });
 
+  // Moon animation: far right → totality (center) → pause → far left → jump back
+  // Times: [start, partial-in, totality-start, totality-end, partial-out, end]
+  const moonCx    = [210, 140,  100,  100,  60,  -10];
+  const moonTimes = [0,   0.25, 0.42, 0.58, 0.75, 1];
+
+  // Corona opacity: only during totality window
+  const coronaTimes   = [0, 0.35, 0.42, 0.50, 0.58, 0.65, 1];
+  const coronaOpacity = [0, 0,    0.9,  1,    0.9,  0,    0];
+
+  const duration = 9;
+  const repeatDelay = 1.5;
+
   return (
-    <div className="relative w-full max-w-[260px] mx-auto py-4">
+    <div className="relative w-full max-w-[280px] mx-auto py-3">
       <svg viewBox="0 0 200 200" className="w-full">
-        {/* Outer corona glow */}
+        {/* Outer ambient glow */}
         <motion.circle
-          cx="100" cy="100" r="60"
-          fill="none" stroke="#FBBF24" strokeWidth="20" opacity={0.08}
-          animate={{ opacity: [0.04, 0.18, 0.04], strokeWidth: [16, 26, 16] }}
+          cx="100" cy="100" r="65"
+          fill="none" stroke="#FBBF24" strokeWidth="22" opacity={0.06}
+          animate={{ opacity: [0.04, 0.13, 0.04], strokeWidth: [18, 28, 18] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
 
         {/* Sun disk */}
         <circle cx="100" cy="100" r="38" fill="#F59E0B" />
-        <circle cx="100" cy="100" r="26" fill="#FBBF24" opacity={0.6} />
+        {/* Sun bright core */}
+        <circle cx="100" cy="100" r="24" fill="#FBBF24" opacity={0.7} />
 
-        {/* Corona rays — appear at totality (moon cx ≈ 100) */}
-        {coronaRays.map((ray, i) => (
+        {/* Corona rays — appear only at totality */}
+        {rays.map((r, i) => (
           <motion.line
             key={i}
-            x1={ray.x1} y1={ray.y1} x2={ray.x2} y2={ray.y2}
-            stroke="white" strokeWidth="1.2" strokeLinecap="round"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0, 0.7, 0.9, 0.7, 0, 0] }}
+            x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2}
+            stroke="white"
+            strokeWidth={i % 2 === 0 ? 1.5 : 0.8}
+            strokeLinecap="round"
+            animate={{ opacity: coronaOpacity }}
             transition={{
-              duration: 10,
-              delay: 0.5 + i * 0.02,
+              duration,
+              delay: i * 0.02,
               repeat: Infinity,
-              repeatDelay: 2,
-              times: [0, 0.28, 0.38, 0.5, 0.62, 0.72, 1],
+              repeatDelay,
+              times: coronaTimes,
               ease: "easeInOut",
             }}
           />
         ))}
 
-        {/* Moon — slides across the sun */}
+        {/* Moon */}
         <motion.circle
-          r="40" cy="100"
-          fill="#1a1a1a"
-          stroke="#2a2a2a" strokeWidth="1"
-          style={{ cx: 170 }}
-          animate={{ cx: [170, 100, 30] }}
+          r="41"
+          cy="100"
+          fill="#111"
+          stroke="#222"
+          strokeWidth="1"
+          animate={{ cx: moonCx }}
           transition={{
-            duration: 10,
-            delay: 0.5,
+            duration,
             repeat: Infinity,
-            repeatDelay: 2,
-            ease: [0.4, 0, 0.6, 1],
+            repeatDelay,
+            times: moonTimes,
+            ease: "easeInOut",
           }}
         />
       </svg>
 
       {/* Phase labels */}
-      <div className="flex justify-between text-[10px] text-[#505055] mt-1 px-2">
+      <div className="flex justify-between text-[10px] text-[#505055] px-2 mt-0">
         <span>Parcial</span>
-        <span className="text-[#F59E0B] font-semibold">Totalidad</span>
+        <span className="text-[#F59E0B] font-bold">✦ Totalidad</span>
         <span>Parcial</span>
       </div>
     </div>

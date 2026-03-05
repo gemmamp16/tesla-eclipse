@@ -1,16 +1,9 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import EclipseDiagram from "./EclipseDiagram";
-
-const RouteMap = dynamic(() => import("./RouteMap"), { ssr: false, loading: () => (
-  <div className="rounded-2xl bg-[#0d0d0d] border border-white/5 flex items-center justify-center" style={{ height: 210 }}>
-    <p className="text-[13px] text-[#505055]">Cargando mapa…</p>
-  </div>
-)});
 
 interface DiscoveryCardsProps {
   onComplete: () => void;
@@ -48,12 +41,13 @@ const EclipseVisual = () => (
 const MapVisual = () => (
   <div className="rounded-2xl overflow-hidden border border-white/5" style={{ height: 220 }}>
     <iframe
-      src="https://www.openstreetmap.org/export/embed.html?bbox=-1.0%2C39.95%2C-0.75%2C40.15&layer=mapnik&marker=40.0528%2C-0.8693"
+      src="https://maps.google.com/maps?q=Camping+Javalambre,+Manzanera,+Teruel,+Espa%C3%B1a&output=embed&z=14&hl=es"
       width="100%"
       height="220"
       style={{ border: 0, display: "block" }}
       loading="lazy"
       title="Camping Javalambre"
+      referrerPolicy="no-referrer-when-downgrade"
     />
   </div>
 );
@@ -61,8 +55,18 @@ const MapVisual = () => (
 // ── Card 3: Ruta Supercharger ────────────────────────────────────────────────
 const RouteVisual = () => (
   <div className="space-y-3">
-    {/* Mapa Leaflet oscuro con marcadores y ruta real */}
-    <RouteMap />
+    {/* Google Maps con ruta y paradas Supercharger */}
+    <div className="rounded-2xl overflow-hidden border border-white/5" style={{ height: 210 }}>
+      <iframe
+        src="https://maps.google.com/maps?f=d&hl=es&saddr=Almorad%C3%AD%2C+Alicante%2C+Espa%C3%B1a&daddr=Tesla+Supercharger+Torrent%2C+Valencia+to:Camping+Javalambre%2C+Manzanera%2C+Teruel&output=embed"
+        width="100%"
+        height="210"
+        style={{ border: 0, display: "block" }}
+        loading="lazy"
+        title="Ruta Almoradí → Camping Javalambre"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
     {/* Paradas Supercharger ruta Almoradí → Manzanera */}
     <div className="bg-[#0d0d0d] rounded-2xl border border-white/5 overflow-hidden">
       <div className="px-4 py-3 border-b border-white/5">
@@ -233,8 +237,8 @@ const cards = [
     label: "05 / 05",
     tag: "KIT DE AVENTURA",
     title: "Tarjeta Decathlon",
-    subtitle: "100€ · Para equiparos juntos",
-    body: "Para ir juntos a elegir todo lo que necesitáis: sacos de dormir, esterillas, ropa de sierra... Lo que haga falta para vuestra primera aventura outdoor.",
+    subtitle: "100€ · Para equiparte para la aventura",
+    body: "Para que vayamos juntos a elegir lo que necesitas: sacos de dormir, esterillas, ropa de sierra... Todo lo que haga falta para nuestra primera aventura outdoor.",
     visual: <DecathlonVisual />,
   },
 ];
