@@ -88,6 +88,19 @@ export default function UpdateComplete({ onViewCards }: { onViewCards?: () => vo
         ))}
       </motion.div>
 
+      {/* Link más info eclipse */}
+      <motion.a
+        href="https://www.turismodearagon.com/eclipse-solar-2026/"
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6 }}
+        className="mt-6 text-[13px] text-[#F59E0B] font-medium"
+      >
+        Más info sobre el eclipse · Turismo de Aragón ↗
+      </motion.a>
+
       {/* Botón ver regalos */}
       {onViewCards && (
         <motion.button

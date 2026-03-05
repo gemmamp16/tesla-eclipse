@@ -207,6 +207,7 @@ const cards = [
     title: "Eclipse Solar Total",
     subtitle: "12 de agosto de 2026 · 20:30h · ~90 segundos",
     body: "El 12 de agosto de 2026 la Luna tapará el Sol por completo sobre Teruel durante 90 segundos. El eclipse parcial empieza a las 19:30h y la totalidad llega a las 20:30h — con el Sol todavía alto antes de su puesta a las 21:00h. La corona solar brillará a simple vista, el cielo se oscurecerá de golpe y saldrán estrellas en pleno agosto. Y hay un bonus: coincide con el máximo de las Perseidas, la lluvia de estrellas más famosa del año. Doble espectáculo en una sola noche.",
+    link: { label: "Más info · Turismo de Aragón", url: "https://www.turismodearagon.com/eclipse-solar-2026/" },
     visual: <EclipseVisual />,
   },
   {
@@ -336,6 +337,16 @@ export default function DiscoveryCards({ onComplete, onReveal }: DiscoveryCardsP
               <h2 className="text-[26px] font-bold text-white leading-tight mb-1">{card.title}</h2>
               <p className="text-[13px] mb-3 text-[#707075]">{card.subtitle}</p>
               <p className="text-[15px] text-white/60 leading-relaxed">{card.body}</p>
+              {card.link && (
+                <a
+                  href={card.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-4 text-[13px] text-[#F59E0B] font-medium"
+                >
+                  {card.link.label} ↗
+                </a>
+              )}
             </motion.div>
           </motion.div>
         </AnimatePresence>
