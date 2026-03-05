@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const features = [
-  "1 experiencia astronómica programada",
+  "Experiencia astronómica programada",
   "Nuevo destino cargado en el navegador",
   "Modo aventura: primera activación",
   "Hardware de seguridad solar incluido",
