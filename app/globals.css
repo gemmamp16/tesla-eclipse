@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #181818;
+  --color-foreground: #ffffff;
+  --color-tesla-blue: #3E6AE1;
+  --color-tesla-blue-light: #5580F0;
+  --color-tesla-card: #252525;
+  --color-tesla-card-hover: #2d2d2d;
+  --color-tesla-card-light: #333333;
+  --color-tesla-secondary: #a0a0a5;
+  --color-tesla-tertiary: #505055;
+  --color-tesla-muted: #707075;
+  --color-eclipse-gold: #F59E0B;
+  --color-eclipse-corona: #FBBF24;
+  --color-achievement: #10B981;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: #181818;
+  color: #ffffff;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
