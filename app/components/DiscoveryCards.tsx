@@ -70,12 +70,12 @@ const RouteVisual = () => (
     {/* Paradas Supercharger ruta Almoradí → Manzanera */}
     <div className="bg-[#0d0d0d] rounded-2xl border border-white/5 overflow-hidden">
       <div className="px-4 py-3 border-b border-white/5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#a0a0a5]">Paradas Supercharger · ~250 km</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#a0a0a5]">Paradas Supercharger · 318 km · ~3h 30 min</p>
       </div>
       {[
         { ciudad: "Almoradí", km: "Salida", sc: "Alicante · inicio de ruta", icon: "🏁" },
-        { ciudad: "SC Torrent", km: "~130 km", sc: "Parc Comercial Torrent · Valencia", icon: "⚡", highlight: true },
-        { ciudad: "Camping Javalambre", km: "~250 km", sc: "Manzanera, Teruel · Destino", icon: "⛺" },
+        { ciudad: "SC Torrent", km: "~165 km", sc: "Parc Comercial Torrent · Valencia", icon: "⚡", highlight: true },
+        { ciudad: "Camping Javalambre", km: "318 km", sc: "Manzanera, Teruel · ~3h 30 min", icon: "⛺" },
       ].map(({ ciudad, km, sc, icon, highlight }) => (
         <div key={ciudad} className={`flex items-center gap-3 px-4 py-3 border-b border-white/5 last:border-0 ${highlight ? "bg-[#F59E0B]/8" : ""}`}>
           <span className="text-base w-6 text-center">{icon}</span>
@@ -221,8 +221,8 @@ const cards = [
     label: "03 / 05",
     tag: "RUTA CALCULADA",
     title: "Paradas Supercharger",
-    subtitle: "Almoradí → Manzanera · ~250 km",
-    body: "La ruta desde casa hasta el camping son unos 250 km. Solo necesitamos una parada de carga: el Supercharger de Torrent, justo antes de salir de la zona de Valencia. Desde ahí el Tesla llega al camping sin problema. Están calculadas las paradas, la ruta y los tiempos — solo tienes que subir.",
+    subtitle: "Almoradí → Manzanera · 318 km · ~3h 30 min",
+    body: "La ruta desde casa hasta el camping son 318 km y unas 3 horas y media. Solo necesitamos una parada de carga: el Supercharger de Torrent, a mitad de camino. Desde ahí el Tesla llega al camping sin problema. La ruta está calculada — solo tienes que subir.",
     visual: <RouteVisual />,
   },
   {
