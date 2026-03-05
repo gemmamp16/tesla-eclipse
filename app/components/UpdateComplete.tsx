@@ -67,7 +67,7 @@ export default function UpdateComplete({ onViewCards }: { onViewCards?: () => vo
           Tu pack de regalo
         </p>
         {[
-          { icon: "🌑", label: "Eclipse Solar Total", sub: "Javalambre · 12 ago 2026" },
+          { icon: "🌑", label: "Eclipse Solar Total", sub: "12 ago 2026 · 20:30h · 90 seg · Perseidas" },
           { icon: "⛺", label: "Camping reservado", sub: "8 – 14 de agosto · Manzanera, Teruel" },
           { icon: "🕶️", label: "Gafas de eclipse certificadas", sub: "ISO 12312-2 · Listas para usar" },
           { icon: "🎁", label: "Tarjeta regalo Decathlon", sub: "100€ para equiparte para la aventura" },
