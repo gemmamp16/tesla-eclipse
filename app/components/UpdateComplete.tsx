@@ -39,7 +39,7 @@ export default function UpdateComplete({ onViewCards }: { onViewCards?: () => vo
           Juntos, en el Teslita, bajo el eclipse total.
           Nuestro primer camping. Nuestra aventura.
         </p>
-        <p className="text-[14px] text-[#707075] mt-4 italic">Te quiero</p>
+        <p className="text-[14px] text-[#707075] mt-4 italic">Te amo</p>
       </motion.div>
 
       {/* Countdown */}
