@@ -11,16 +11,29 @@ import ProgressBar from "./components/ProgressBar";
 type Screen = "splash" | "installing" | "features" | "complete";
 
 const STORAGE_KEY = "tesla_eclipse_done";
+const STORAGE_VER  = "tesla_eclipse_ver";
+// Cambia con cada deploy de Vercel (NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA),
+// o usa la fecha de build como fallback para desarrollo local
+const BUILD_ID =
+  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ||
+  process.env.NEXT_PUBLIC_BUILD_TIME ||
+  "dev";
 
 export default function Home() {
-  // Arranca en "complete" si ya lo vio antes
   const [screen, setScreen] = useState<Screen>("splash");
   const [unlockedCount, setUnlockedCount] = useState(0);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY) === "1") {
+    const savedVersion = localStorage.getItem(STORAGE_VER);
+    const done = localStorage.getItem(STORAGE_KEY) === "1";
+    // Solo restaura el estado completado si es la misma versión desplegada
+    if (done && savedVersion === BUILD_ID) {
       setScreen("complete");
+    } else if (savedVersion !== BUILD_ID) {
+      // Nueva versión → borra el estado anterior para empezar desde cero
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STORAGE_VER);
     }
     setReady(true);
   }, []);
@@ -29,6 +42,7 @@ export default function Home() {
 
   const handleComplete = useCallback(() => {
     localStorage.setItem(STORAGE_KEY, "1");
+    localStorage.setItem(STORAGE_VER, BUILD_ID);
     setScreen("complete");
   }, []);
 

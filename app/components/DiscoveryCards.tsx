@@ -238,7 +238,7 @@ const cards = [
     tag: "KIT DE AVENTURA",
     title: "Tarjeta Decathlon",
     subtitle: "100€ · Para equiparte para la aventura",
-    body: "Para nuestra primera aventura de camping necesitarás equipo. Con esta tarjeta vamos juntos a Decathlon a elegir lo que haga falta: saco de dormir, esterilla, ropa de montaña, linterna... Lo que tú quieras. Es tu regalo para que esta aventura sea lo más cómoda y divertida posible.",
+    body: "Para nuestra primera aventura de camping necesitaremos equipo. Con esta tarjeta vamos juntos a Decathlon a elegir lo que haga falta: saco de dormir, esterilla, ropa de montaña, linterna... Lo que tú quieras. Es tu regalo para que esta aventura sea lo más cómoda y divertida posible.",
     visual: <DecathlonVisual />,
   },
 ];
