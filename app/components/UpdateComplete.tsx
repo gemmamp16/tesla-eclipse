@@ -77,10 +77,11 @@ export default function UpdateComplete({
           { icon: "⛺", label: "Camping reservado", sub: "8 – 14 de agosto · Manzanera, Teruel" },
           { icon: "🕶️", label: "Gafas de eclipse certificadas", sub: "ISO 12312-2 · Listas para usar" },
           { icon: "🎁", label: "Tarjeta regalo Decathlon", sub: "100€ para equiparte para la aventura" },
+          { icon: "⚡", label: "Tarjeta regalo Tesla", sub: "100 USD · Para equipar el Teslita" },
         ].map(({ icon, label, sub }, i) => (
           <div
             key={label}
-            className={`flex items-center gap-4 px-5 py-3 ${i < 3 ? "border-b border-white/5" : ""}`}
+            className={`flex items-center gap-4 px-5 py-3 ${i < 4 ? "border-b border-white/5" : ""}`}
           >
             {/* Icono sobre fondo blanco */}
             <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-xl shrink-0">
