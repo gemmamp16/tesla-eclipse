@@ -61,7 +61,7 @@ export default function Home() {
   const progress =
     screen === "splash" ? 0
     : screen === "installing" ? 15
-    : screen === "features" ? 15 + unlockedCount * 14
+    : screen === "features" ? 15 + unlockedCount * 16
     : 100;
 
   // Evita flash mientras lee localStorage

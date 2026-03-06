@@ -199,60 +199,10 @@ const DecathlonVisual = () => (
   </div>
 );
 
-// ── Card 6: Tesla Gift Card ───────────────────────────────────────────────────
-const TeslaCardVisual = () => (
-  <div className="rounded-2xl overflow-hidden relative border border-white/10" style={{ background: "#1a0a0a" }}>
-    {/* Diagonal red stripe */}
-    <div className="absolute inset-0 overflow-hidden">
-      <div
-        className="absolute"
-        style={{
-          top: "-30%", right: "-10%",
-          width: "60%", height: "200%",
-          background: "linear-gradient(135deg, #E31937 0%, #a01020 100%)",
-          opacity: 0.18,
-          transform: "rotate(-12deg)",
-        }}
-      />
-    </div>
-    {/* Card header */}
-    <div className="relative z-10 flex items-start justify-between p-5 pb-2">
-      <div>
-        <p className="text-[10px] text-white/50 uppercase tracking-[0.18em] mb-0.5">Tarjeta Regalo</p>
-        <p className="text-[22px] font-bold tracking-[0.25em] text-white">TESLA</p>
-      </div>
-      <p className="text-[32px] font-bold text-white leading-none">100<span className="text-[20px]">$</span></p>
-    </div>
-    {/* Card body */}
-    <div className="relative z-10 px-5 pb-5 pt-3 space-y-3">
-      <div className="h-px bg-white/8" />
-      <div className="grid grid-cols-2 gap-3">
-        <div>
-          <p className="text-[10px] text-white/40 uppercase tracking-wider mb-1">Número de tarjeta</p>
-          <p className="text-[13px] font-mono text-white/30 tracking-widest">—</p>
-        </div>
-        <div>
-          <p className="text-[10px] text-white/40 uppercase tracking-wider mb-1">PIN</p>
-          <p className="text-[13px] font-mono text-white/30 tracking-widest">—</p>
-        </div>
-      </div>
-      <div className="flex items-center gap-2 pt-1">
-        <span
-          className="w-2 h-2 rounded-full shrink-0"
-          style={{ background: "#E31937" }}
-        />
-        <p className="text-[11px] text-white/40">
-          Canjeable en <span className="text-white/60 font-medium">tesla.com/giftcards</span> · Datos en el correo de compra
-        </p>
-      </div>
-    </div>
-  </div>
-);
-
 // ── Cards data ────────────────────────────────────────────────────────────────
 const cards = [
   {
-    label: "01 / 06",
+    label: "01 / 05",
     tag: "EXPERIENCIA ASTRONÓMICA",
     title: "Eclipse Solar Total",
     subtitle: "12 de agosto de 2026 · 20:30h · ~90 segundos",
@@ -261,7 +211,7 @@ const cards = [
     visual: <EclipseVisual />,
   },
   {
-    label: "02 / 06",
+    label: "02 / 05",
     tag: "NUEVO DESTINO",
     title: "Camping Javalambre",
     subtitle: "8 – 14 de agosto · Manzanera, Teruel",
@@ -269,7 +219,7 @@ const cards = [
     visual: <MapVisual />,
   },
   {
-    label: "03 / 06",
+    label: "03 / 05",
     tag: "RUTA CALCULADA",
     title: "Paradas Supercharger",
     subtitle: "Almoradí → Manzanera · 318 km · ~3h 30 min",
@@ -277,7 +227,7 @@ const cards = [
     visual: <RouteVisual />,
   },
   {
-    label: "04 / 06",
+    label: "04 / 05",
     tag: "HARDWARE INCLUIDO",
     title: "Hardware incluido",
     subtitle: "Objeto físico · Ya está en tus manos",
@@ -285,20 +235,12 @@ const cards = [
     visual: <GlassesVisual />,
   },
   {
-    label: "05 / 06",
+    label: "05 / 05",
     tag: "KIT DE AVENTURA",
     title: "Tarjeta Decathlon",
     subtitle: "100€ · Para equiparte para la aventura",
     body: (<>Para nuestra primera aventura de camping necesitaremos equipo. Con esta tarjeta <strong className="text-white">vamos juntos a Decathlon</strong> a elegir lo que haga falta: <strong className="text-white">saco de dormir, esterilla, ropa de montaña</strong>, linterna... Lo que tú quieras. Es tu regalo para que esta aventura sea lo más cómoda y divertida posible.</>),
     visual: <DecathlonVisual />,
-  },
-  {
-    label: "06 / 06",
-    tag: "UPGRADE TESLA",
-    title: "Tarjeta Regalo Tesla",
-    subtitle: "100 USD · Para el Teslita",
-    body: (<>Para completar la aventura, he añadido también <strong className="text-white">100 USD en crédito Tesla</strong> para que equipes el coche con lo que quieras: accesorios, mejoras, lo que necesite el Teslita para el viaje. Canjeable en <strong className="text-white">tesla.com/giftcards</strong> con tu cuenta Tesla. Los datos los tienes en el correo de compra.</>),
-    visual: <TeslaCardVisual />,
   },
 ];
 
